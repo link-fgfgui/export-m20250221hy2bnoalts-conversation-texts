@@ -6,6 +6,7 @@ pm.eval(js_code)
 avatar_raw = list(pm.globalThis._avatar)
 texts = json.loads(open("m20250221hy2bnoalts-zh-cn.json",
                    'r', encoding='utf-8').read())
+texts = {i: texts[i] for i in texts if "car_egg" in i}
 avatar = {str(int(i["_id"])): i["Name"] for i in avatar_raw}
 avatar.update(json.loads(
     open("avatar_add.json", "r", encoding='utf-8').read()))
